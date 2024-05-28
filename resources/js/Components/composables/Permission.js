@@ -1,6 +1,6 @@
 import { usePage } from "@inertiajs/vue3";
 
-export default function usePermission() {
+export function usePermission() {
     const hasRole = (name) => usePage().props.auth.user.roles.includes(name);
     const hasPermission = (name) => usePage().props.auth.user.permissions.includes(name);
 
