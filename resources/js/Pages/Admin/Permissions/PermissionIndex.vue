@@ -1,6 +1,6 @@
 <script setup>
 import AdminLayout from '@/Layouts/AdminLayout.vue';
-import { Head } from '@inertiajs/vue3';
+import { Head, Link } from '@inertiajs/vue3';
 import Table from '../../../Components/Parts/Table.vue';
 import TableRow from '../../../Components/Parts/TableRow.vue';
 import TableHeaderCell from '../../../Components/Parts/TableHeaderCell.vue';
@@ -11,13 +11,14 @@ console.log(props.permissions);
 </script>
 
 <template>
-    <Head title="Dashboard" />
+    <Head title="Permissions" />
 
-    <AdminLayout>
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 text-gray-900">Permissions Index Page </div>
+    <AdminLayout>     
+            <div class="max-w-7xl mx-auto py-4">
+                <div class="flex justify-between">
+                     <h1> Permission Index Page</h1>
+                     <Link :href="route('permissions.create')" class="text-white px-2 py-2 font-semibold bg-indigo-500 hover:bg-indigo-700 rounded" > Add Permission </Link>
+                </div>
                     <Table>
                         <template #header>
                          <TableRow>
@@ -34,8 +35,8 @@ console.log(props.permissions);
                           </TableRow>
                         </template >
                     </Table>
-                </div>
+                
             </div>
-        </div>
+   
     </AdminLayout>
 </template>

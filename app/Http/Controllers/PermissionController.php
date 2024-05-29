@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatePermissionRequest;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Permission;
 use App\Http\Resources\PermissionResource;
+
 
 class PermissionController extends Controller
 {
@@ -25,15 +27,17 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        
+        return Inertia::render('Admin/Permissions/Create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreatePermissionRequest $request)
     {
-        //
+        Permission::create($request->validated());
+        return to_route('permissions.index');
+
     }
 
     /**

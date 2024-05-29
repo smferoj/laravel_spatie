@@ -10,3 +10,7 @@ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvid
  // Admin layout 
 
  php artisan make:request CreateRoleRequest
+
+
+ // permissions
+ php artisan make:request CreatePermissionRequest
