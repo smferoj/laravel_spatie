@@ -8,3 +8,5 @@ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvid
  php artisan make:seeder RoleSeeder
 
  // Admin layout 
+
+ php artisan make:request CreateRoleRequest
